@@ -1,10 +1,10 @@
 <script>
-	// your script goes here
+  // your script goes here
 </script>
 
 <!-- markup (zero or more items) goes here -->
 <button
-	class="
+  class="
 rounded-xl
 
   bg-gradient-to-t
@@ -22,5 +22,5 @@ rounded-xl
   hover:shadow-starstorm-dim-300/30
   "
 >
-	Let's build together
+  Let's build together
 </button>

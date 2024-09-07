@@ -1,7 +1,7 @@
 <script>
-	import { Button } from '$lib/components';
-	import { Scene } from '$lib/three';
-	import { Canvas } from '@threlte/core';
+  import { Button } from '$lib/components';
+  import { Scene } from '$lib/three';
+  import { Canvas } from '@threlte/core';
 </script>
 
 <h1>Hangloves & Aethers</h1>
@@ -9,7 +9,7 @@
 <Button></Button>
 
 <div class="h-full">
-	<Canvas>
-		<Scene />
-	</Canvas>
+  <Canvas>
+    <Scene />
+  </Canvas>
 </div>
