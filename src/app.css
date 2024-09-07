@@ -27,5 +27,11 @@
 	}
 	button {
 		@apply font-button;
+		@apply font-medium;
+	}
+	a,
+	button {
+		@apply focus-visible:outline-starstorm-bright;
+		@apply focus-visible:border-none;
 	}
 }
