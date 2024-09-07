@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-plum-100;
+		@apply subpixel-antialiased;
+	}
+	p {
+		@apply text-plum-400;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-heading;
+		@apply font-bold;
+
+		@apply text-plum-600;
+	}
+	a {
+		@apply text-starstorm-bright;
+		@apply underline;
+	}
+	button {
+		@apply font-button;
+	}
+}
