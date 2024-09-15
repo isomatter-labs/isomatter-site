@@ -9,7 +9,9 @@
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 <Button></Button>
 
-<div class="h-screen fixed top-0 w-full -z-10">
+<div class="h-screen fixed w-full top-0 
+"
+>
   <Canvas>
     <PerfMonitor anchorX={'right'} logsPerSecond={30}/>
     <Scene />
