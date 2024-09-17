@@ -1,12 +1,13 @@
 <script lang="ts">
   import { T, useTask, useThrelte } from '@threlte/core';
   import { Grid, MeshLineGeometry, MeshLineMaterial, OrbitControls } from '@threlte/extras';
-  import { Color, CubicBezierCurve3, Vector3 } from 'three';
+  import { Color, CubicBezierCurve3, LineBasicMaterial, Vector3 } from 'three';
   import { colors } from '$lib/theme';
   import { Rocket } from './index'
   import { onMount } from 'svelte';
-  import { cubicInOut, backInOut, sineInOut, quadInOut, circInOut } from 'svelte/easing';
+  import { sineInOut } from 'svelte/easing';
     import { tweened, type Tweened } from 'svelte/motion';
+    import fragmentShader from '../../assets/shader.glsl?raw';
 
   const curve = new CubicBezierCurve3(
     new Vector3(.8, -1, 0),
@@ -26,9 +27,9 @@
   const color2 = new Color(colors.starstorm.bright.DEFAULT);
   let rotation = 1;
 
-  const rotateX = tweened(0, { duration: 2000, easing: sineInOut });
-	const rotateY = tweened(0, { duration: 5000, easing: quadInOut });
-	const rotateZ = tweened(0, { duration: 2000, easing: quadInOut });
+  const rotateX = tweened(0, { duration: 2500, easing: sineInOut });
+	const rotateY = tweened(0, { duration: 3000, easing: sineInOut });
+	const rotateZ = tweened(0, { duration: 2500, easing: sineInOut });
 	const animateY = tweened(0, { duration: 2500, easing: sineInOut });
 
   // Adjust the width of the curve
@@ -57,9 +58,9 @@
   async function loop() {
     while(true) {
       const rand = Math.random()
-      if (true && rand < 0.3) {
+      if (rand < 0.5) {
         await rotateY.set(x - 0.5);
-        x += 6.26;
+        x += 6.3
         await rotateY.set(x + 0.5);
       }
       else {
@@ -80,6 +81,9 @@
 
   onMount(async () => {
     window.addEventListener('scroll', handleScroll);
+
+    // Intro
+    // await rotateY.set(12);
 
     loop(); // rotateY
     tweenBetween(rotateX, () => 0, () => 0.05 * (Math.random() * 2 - 1));
@@ -111,7 +115,7 @@
 <!-- [0, 0, 0] -->
 <T.Object3D
     rotation={
-    [-0.25, 1, 1.25]
+    [-0.25, 0.9, 1.25]
     }
     >
   <Rocket
@@ -130,20 +134,24 @@
     shapeFunction={(p) => goBig(p)}
   />
 
-  <MeshLineMaterial
+  <T.ShaderMaterial
+    {fragmentShader}
+  />
+
+  <!-- <MeshLineMaterial
     {color}
     {dashOffset}
-  /> 
+  />  -->
 </T.Mesh>
 
 <T.PerspectiveCamera
   makeDefault
+  
   on:create={({ ref }) => {
     ref.position.set(0, 3, 10)
   }}
 >
-  <!-- <OrbitControls enableDamping
-  /> -->
+  <!-- <OrbitControls enableDamping/> -->
 </T.PerspectiveCamera>
 
 <!-- <Grid
