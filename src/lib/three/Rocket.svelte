@@ -4,31 +4,31 @@ Command: npx @threlte/gltf@2.0.3 ./src/rocket.glb --types
 -->
 
 <script lang="ts">
-  import type * as THREE from 'three'
-  import { Group } from 'three'
-  import { T, type Props, type Events, type Slots, forwardEventHandlers } from '@threlte/core'
-  import { useGltf, useGltfAnimations } from '@threlte/extras'
+  import type * as THREE from 'three';
+  import { Group } from 'three';
+  import { T, type Props, type Events, type Slots, forwardEventHandlers } from '@threlte/core';
+  import { useGltf, useGltfAnimations } from '@threlte/extras';
 
-  type $$Props = Props<THREE.Group>
-  type $$Events = Events<THREE.Group>
-  type $$Slots = Slots<THREE.Group> & { fallback: {}; error: { error: any } }
+  type $$Props = Props<THREE.Group>;
+  type $$Events = Events<THREE.Group>;
+  type $$Slots = Slots<THREE.Group> & { fallback: {}; error: { error: any } };
 
-  export const ref = new Group()
+  export const ref = new Group();
 
-  type ActionName = 'Dummy001|Take 001|BaseLayer' | 'CartoonRocket|Take 001|BaseLayer'
+  type ActionName = 'Dummy001|Take 001|BaseLayer' | 'CartoonRocket|Take 001|BaseLayer';
   type GLTFResult = {
     nodes: {
-      Rocket: THREE.Mesh
-    }
+      Rocket: THREE.Mesh;
+    };
     materials: {
-      Rocket: THREE.MeshPhysicalMaterial
-    }
-  }
+      Rocket: THREE.MeshPhysicalMaterial;
+    };
+  };
 
-  const gltf = useGltf<GLTFResult>('/src/assets/rocket.glb')
-  export const { actions, mixer } = useGltfAnimations<ActionName>(gltf, ref)
+  const gltf = useGltf<GLTFResult>('/src/assets/rocket.glb');
+  export const { actions, mixer } = useGltfAnimations<ActionName>(gltf, ref);
 
-  const component = forwardEventHandlers()
+  const component = forwardEventHandlers();
 </script>
 
 <T is={ref} dispose={false} {...$$restProps} bind:this={$component}>
@@ -37,7 +37,11 @@ Command: npx @threlte/gltf@2.0.3 ./src/rocket.glb --types
   {:then gltf}
     <T.Group name="Scene">
       <T.Group name="CartoonRocket" scale={0.01}>
-        <T.Mesh name="Rocket" geometry={gltf.nodes.Rocket.geometry} material={gltf.materials.Rocket} />
+        <T.Mesh
+          name="Rocket"
+          geometry={gltf.nodes.Rocket.geometry}
+          material={gltf.materials.Rocket}
+        />
       </T.Group>
     </T.Group>
   {:catch error}

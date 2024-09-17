@@ -1,1 +1,4 @@
-export { default as Button } from './Button.svelte';
+export * from './Buttons';
+
+export { default as Header } from './Header.svelte';
+export { default as Logo } from './Logo.svelte';

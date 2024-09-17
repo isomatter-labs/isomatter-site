@@ -40,10 +40,10 @@ export const theme = {
     heading: ['Space Grotesk', ...defaultTheme.fontFamily.sans],
     button: ['Space Grotesk', ...defaultTheme.fontFamily.sans]
   },
-  borderRadius: {
-    xl: '1.125rem'
-  },
   extend: {
+    borderRadius: {
+      xl: '1.125rem'
+    },
     ...colors
   }
 };

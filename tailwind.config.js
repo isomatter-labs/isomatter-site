@@ -9,10 +9,10 @@ export default {
       heading: ['Space Grotesk', ...defaultTheme.fontFamily.sans],
       button: ['Space Grotesk', ...defaultTheme.fontFamily.sans]
     },
-    borderRadius: {
-      xl: '1.125rem'
-    },
     extend: {
+      borderRadius: {
+        xl: '1.125rem'
+      },
       colors: {
         starstorm: {
           DEFAULT: '#251150',
@@ -43,7 +43,7 @@ export default {
             500: '#A6A3AD'
           }
         },
-        skyblue: '4CA9FF'
+        skyblue: '#4CA9FF'
       },
       transitionTimingFunction: {
         'circular-in-out': 'cubic-bezier(0.785, 0.135, 0.15, 0.86)'
