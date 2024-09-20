@@ -35,7 +35,7 @@
 
 <header
   class="
-  z-20 flex w-full items-center justify-between gap-4 bg-plum-100 p-7"
+  z-20 flex w-full items-center justify-between gap-4 bg-plum-100 px-10 py-7"
   bind:this={headerRef}
 >
   <HeaderContent />
@@ -43,7 +43,7 @@
 
 <header
   class="
-    fixed left-0 top-0 z-20 flex w-full items-center justify-between gap-4 bg-plum-100 p-7
+    fixed left-0 top-0 z-20 flex w-full items-center justify-between gap-4 bg-plum-100 px-10 py-7
     shadow-2xl shadow-starstorm-dim-400/20
   "
   class:hidden={!slideDown}

@@ -23,10 +23,11 @@
   transition-[box-shadow,transform]
   duration-300
   ease-circular-in-out
+  hover:scale-105
   hover:shadow-lg
   hover:shadow-starstorm-dim-300/30
 
-  active:scale-95
+  active:scale-[.975]
   "
 >
   <slot />

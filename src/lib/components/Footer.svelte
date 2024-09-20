@@ -28,7 +28,9 @@
         </div>
       </div>
       <div class="text-end text-sm opacity-80">
-        <Logo />
+        <div class="mb-2 flex flex-row-reverse">
+          <Logo />
+        </div>
         © 2024 Isomatter Laboratories
         <br />
         Website created by <a href="https://kufa.io">Jack Kufa</a>

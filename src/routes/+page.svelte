@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { Button, Header, SectionBlock } from '$lib/components';
-  import Footer from '$lib/components/Footer.svelte';
+  import { Button, Header, SectionBlock, Footer, Icon } from '$lib/components';
   import { Scene } from '$lib/three';
   import { Canvas } from '@threlte/core';
   import { PerfMonitor } from '@threlte/extras';
@@ -43,6 +42,12 @@ w-full
     technology challenges that are holding you back. Whether it’s streamlining
     your operations, improving your outreach, or making sense of your data,
     we’re here to build custom software solutions that fit like a glove.
+    <a
+      slot="extras"
+      href="."
+      class="flex items-center gap-2 text-starstorm-dim-400"
+      >Learn more <Icon class="fill-starstorm-dim-400" /></a
+    >
   </SectionBlock>
 
   <!-- TEAM -->

@@ -5,12 +5,12 @@
 </script>
 
 <a class="logo-wrapper flex-grow basis-0" href={$page.url.origin}>
-  <Logo />
+  <Logo vivid />
 </a>
 <nav class="hidden flex-grow basis-0 justify-center gap-4 md:flex">
   <NavLink href="#services">Services</NavLink>
   <NavLink href="#team">Team</NavLink>
 </nav>
-<div class="flex hidden flex-grow basis-0 justify-end md:flex">
+<div class="hidden flex-grow basis-0 justify-end md:flex">
   <CTAButton />
 </div>

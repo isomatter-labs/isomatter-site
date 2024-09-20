@@ -29,7 +29,7 @@
 >
   <slot />
   <div
-    class="absolute left-0 mt-[2px] w-full origin-center border-b border-plum-200 underline opacity-0"
-    style="transform: scaleX({$scaleX})"
+    class="absolute left-0 mt-[2px] w-full origin-center border-b border-plum-200 underline"
+    style="transform: scaleX({$scaleX});"
   ></div>
 </a>
