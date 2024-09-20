@@ -8,6 +8,8 @@
 <!-- markup (zero or more items) goes here -->
 <button
   class="
+  text-nowrap
+
   rounded-xl
 
   bg-gradient-to-t

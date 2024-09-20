@@ -24,7 +24,6 @@
     @apply text-plum-600;
   }
   a {
-    @apply text-starstorm-bright;
     @apply underline;
   }
   button {

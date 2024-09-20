@@ -7,11 +7,11 @@ export default {
     fontFamily: {
       sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
       heading: ['Space Grotesk', ...defaultTheme.fontFamily.sans],
-      button: ['Space Grotesk', ...defaultTheme.fontFamily.sans]
+      button: ['Space Grotesk', ...defaultTheme.fontFamily.sans],
     },
     extend: {
       borderRadius: {
-        xl: '1.125rem'
+        xl: '1.125rem',
       },
       colors: {
         starstorm: {
@@ -21,12 +21,12 @@ export default {
             50: '#FBFAFC',
             300: '#8451E1',
             500: '#442F84',
-            400: '#5337A8'
+            400: '#5337A8',
           },
           bright: {
             DEFAULT: '#6F1FF1',
-            alt: '#6D41EE'
-          }
+            alt: '#6D41EE',
+          },
         },
         plum: {
           DEFAULT: '#534375',
@@ -40,15 +40,15 @@ export default {
           dim: {
             300: '#413D4C',
             400: '#66626E',
-            500: '#A6A3AD'
-          }
+            500: '#A6A3AD',
+          },
         },
-        skyblue: '#4CA9FF'
+        skyblue: '#4CA9FF',
       },
       transitionTimingFunction: {
-        'circular-in-out': 'cubic-bezier(0.785, 0.135, 0.15, 0.86)'
-      }
-    }
+        'circular-in-out': 'cubic-bezier(0.785, 0.135, 0.15, 0.86)',
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };

@@ -1,20 +1,10 @@
 <script lang="ts">
-  import { Button, Header } from '$lib/components';
+  import { Button, Header, SectionBlock } from '$lib/components';
+  import Footer from '$lib/components/Footer.svelte';
   import { Scene } from '$lib/three';
   import { Canvas } from '@threlte/core';
   import { PerfMonitor } from '@threlte/extras';
 </script>
-
-<Header />
-<div class="mx-20 mt-40 max-w-[34rem]">
-  <h1 class="mb-8 text-6xl text-[56px]">Custom software to launch your mission</h1>
-  <p class="mb-8">
-    At Isomatter Laboratories, we combine expert experience in product management and software
-    engineering. We’re the team that dives deep into your organization's unique needs, helping you
-    navigate the world of technology with clarity and confidence.
-  </p>
-  <Button>Let's build together</Button>
-</div>
 
 <div
   class="fixed top-0 -z-10 h-screen
@@ -22,10 +12,46 @@ w-full
 "
 >
   <Canvas>
-    <PerfMonitor anchorX={'right'} anchorY={'bottom'} logsPerSecond={30} />
+    <!-- <PerfMonitor anchorX={'right'} anchorY={'bottom'} logsPerSecond={30} /> -->
     <Scene />
   </Canvas>
 </div>
-<div class="h-screen"></div>
-<div class="h-screen"></div>
-<div class="h-screen"></div>
+
+<Header />
+
+<div class="container mx-4 md:mx-auto">
+  <!-- HEADER -->
+  <SectionBlock
+    heading={'Custom software to launch your mission'}
+    type="header"
+  >
+    At Isomatter Laboratories, we combine expert experience in product
+    management and software engineering. We’re the team that dives deep into
+    your organization's unique needs, helping you navigate the world of
+    technology with clarity and confidence.
+    <Button slot="extras">Let's build together</Button>
+  </SectionBlock>
+
+  <!-- SERVICES -->
+  <SectionBlock
+    heading={'Your mission is our mission'}
+    subheading={'Our Services'}
+    id="services"
+    class="ms-auto"
+  >
+    We dive deep into your world, nerding out over every detail to uncover the
+    technology challenges that are holding you back. Whether it’s streamlining
+    your operations, improving your outreach, or making sense of your data,
+    we’re here to build custom software solutions that fit like a glove.
+  </SectionBlock>
+
+  <!-- TEAM -->
+  <SectionBlock heading={'A dynamic duo'} subheading={'Our Team'} id="team">
+    Isomatter Laboratories brings together product experience with nonprofits
+    and software experience on teams ranging from startups to large companies.
+    Together, we’re passionate, nerdy, and committed to making technology work
+    for you.
+  </SectionBlock>
+</div>
+
+<Footer />

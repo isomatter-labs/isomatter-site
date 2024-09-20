@@ -6,7 +6,13 @@ Command: npx @threlte/gltf@2.0.3 ./src/rocket.glb --types
 <script lang="ts">
   import type * as THREE from 'three';
   import { Group } from 'three';
-  import { T, type Props, type Events, type Slots, forwardEventHandlers } from '@threlte/core';
+  import {
+    T,
+    type Props,
+    type Events,
+    type Slots,
+    forwardEventHandlers,
+  } from '@threlte/core';
   import { useGltf, useGltfAnimations } from '@threlte/extras';
 
   type $$Props = Props<THREE.Group>;
@@ -15,7 +21,9 @@ Command: npx @threlte/gltf@2.0.3 ./src/rocket.glb --types
 
   export const ref = new Group();
 
-  type ActionName = 'Dummy001|Take 001|BaseLayer' | 'CartoonRocket|Take 001|BaseLayer';
+  type ActionName =
+    | 'Dummy001|Take 001|BaseLayer'
+    | 'CartoonRocket|Take 001|BaseLayer';
   type GLTFResult = {
     nodes: {
       Rocket: THREE.Mesh;

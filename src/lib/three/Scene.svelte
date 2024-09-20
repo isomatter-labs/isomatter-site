@@ -1,6 +1,12 @@
 <script lang="ts">
   import { T, useTask, useThrelte } from '@threlte/core';
-  import { Grid, MeshLineGeometry, MeshLineMaterial, OrbitControls, Stars } from '@threlte/extras';
+  import {
+    Grid,
+    MeshLineGeometry,
+    MeshLineMaterial,
+    OrbitControls,
+    Stars,
+  } from '@threlte/extras';
   import { Color, CubicBezierCurve3, LineBasicMaterial, Vector3 } from 'three';
   import { colors } from '$lib/theme';
   import Rocket from './Rocket.svelte';
@@ -37,6 +43,8 @@
   $: t = 0;
   $: mx = 0;
   $: my = 0;
+
+  $: scale = 1;
 
   // Adjust the width of the curve
   let count = 0;
@@ -122,7 +130,6 @@
     // window.removeEventListener('scroll', handleScroll);
     // });
   });
-
   useTask((delta) => {
     camera.current.position.y = 2 - scrollY * 0.01;
 
@@ -140,6 +147,11 @@
   size.subscribe((s) => {
     rx = s.width;
     ry = s.height;
+
+    if (s.width < 1400) {
+      scale = s.width / 1400;
+      console.log(scale);
+    }
   });
 </script>
 
@@ -148,32 +160,38 @@
 
 <!-- [-0.25, 1, 1.25] -->
 <!-- [0, 0, 0] -->
-<T.Object3D rotation={[-0.25, 0.9, 1.25]}>
-  <Rocket scale={3} position={[2, $animateY, 0]} rotation={[$rotateX, $rotateY, $rotateZ]} />
-</T.Object3D>
-<T.Mesh position={[-1, 3.6, -1.2]} scale={2}>
-  <MeshLineGeometry {points} shape="custom" shapeFunction={(p) => goBig(p)} />
-  <!-- <T.BoxGeometry /> -->
+<T.Group {scale}>
+  <T.Object3D rotation={[-0.25, 0.9, 1.25]}>
+    <Rocket
+      scale={3}
+      position={[2, $animateY, 0]}
+      rotation={[$rotateX, $rotateY, $rotateZ]}
+    />
+  </T.Object3D>
+  <T.Mesh position={[-1, 3.6, -1.2]} scale={2}>
+    <MeshLineGeometry {points} shape="custom" shapeFunction={(p) => goBig(p)} />
+    <!-- <T.BoxGeometry /> -->
 
-  <T.ShaderMaterial
-    {fragmentShader}
-    {vertexShader}
-    uniforms={{
-      u_resolution: { value: { x: rx, y: ry } },
-      u_time: { value: 100 },
-      u_mouse: { value: { x: mx, y: my } }
-    }}
-    uniforms.u_time.value={$rotateY}
-  />
+    <T.ShaderMaterial
+      {fragmentShader}
+      {vertexShader}
+      uniforms={{
+        u_resolution: { value: { x: rx, y: ry } },
+        u_time: { value: 100 },
+        u_mouse: { value: { x: mx, y: my } },
+      }}
+      uniforms.u_time.value={$rotateY}
+    />
 
-  <MeshLineMaterial {color} {dashOffset} />
-</T.Mesh>
+    <MeshLineMaterial {color} {dashOffset} />
+  </T.Mesh>
+</T.Group>
 
 <T.PerspectiveCamera
   makeDefault
   on:create={({ ref }) => {
     ref.position.set(-1, 0, 10);
-    ref.rotation.set(-.1,0,0);
+    ref.rotation.set(-0.1, 0, 0);
   }}
 >
   <!-- <OrbitControls enableDamping/> -->
