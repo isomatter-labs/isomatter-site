@@ -12,22 +12,15 @@
   let headerRef: HTMLHeadElement;
 
   onMount(() => {
-    window.addEventListener('scroll', (e) => {
-      if (window.scrollY > headerRef.scrollHeight * 2) {
-        if ($translateY === 1 && $opacity === 0) {
-          console.log('slideDown');
-          slideDown = true;
-          translateY.set(0);
-          opacity.set(1);
-        }
-      } else {
-        if (
-          window.scrollY < headerRef.scrollHeight / 2 ||
-          ($translateY === 0 && $opacity === 1)
-        ) {
-          translateY.set(1, { duration: 600 }).then(() => (slideDown = false));
-          opacity.set(0);
-        }
+    window.addEventListener('scroll', async () => {
+      if (window.scrollY > headerRef.scrollHeight && !slideDown) {
+        slideDown = true;
+        await Promise.all([translateY.set(0), opacity.set(1)]);
+        return;
+      } 
+      if (window.scrollY < headerRef.scrollHeight / 2 && slideDown) {
+        await Promise.all([translateY.set(1, { duration: 600 }), opacity.set(0)]);
+        slideDown = false;
       }
     });
   });
