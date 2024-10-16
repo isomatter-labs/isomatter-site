@@ -2,6 +2,7 @@
 <button
   class="
   text-nowrap
+text-starstorm-dim-50
 
   rounded-xl
 
@@ -11,7 +12,7 @@
 
   px-7
   py-2.5
-  text-starstorm-dim-50
+  min-w-40
   
   transition-[box-shadow,transform]
   duration-300
@@ -22,6 +23,7 @@
 
   active:scale-[.975]
   "
+  {...$$restProps}
 >
   <slot />
 </button>

@@ -5,6 +5,11 @@
 <a
   class="
   text-nowrap
+  font-button
+  font-medium
+  block
+  w-fit
+  h-[44px]
 
   rounded-xl
 

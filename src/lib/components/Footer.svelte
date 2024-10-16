@@ -1,14 +1,17 @@
 <script>
   import { CTAButton, Logo } from '.';
+  export let showCTA = true;
 </script>
 
 <footer class="bg-plum-50 py-24">
   <div class="container mx-auto">
-    <div class="flex flex-wrap justify-between gap-4">
-      <h1 class="text-5xl">Ready to get started?</h1>
-      <CTAButton />
-    </div>
-    <div class="mt-32 flex items-end justify-between">
+    {#if showCTA}
+      <div class="flex flex-wrap justify-between items-center gap-4">
+        <h1 class="text-5xl">Ready to get started?</h1>
+        <CTAButton />
+      </div>
+    {/if}
+    <div class="flex items-end justify-between" class:mt-32={showCTA}>
       <div class="flex flex-col gap-6">
         <div>
           <h2 class="color-plum-400 font-normal text-opacity-80">Email</h2>

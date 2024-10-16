@@ -1,6 +1,7 @@
 export * from './Buttons';
 export * from './Header';
 export * from './Icons';
+export * from './Inputs';
 
 export { default as Logo } from './Logo.svelte';
 export { default as Footer } from './Footer.svelte';

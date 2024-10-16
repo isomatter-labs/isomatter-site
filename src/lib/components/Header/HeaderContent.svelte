@@ -8,8 +8,8 @@
   <Logo vivid />
 </a>
 <nav class="hidden flex-grow basis-0 justify-center gap-4 md:flex">
-  <NavLink href="#services">Services</NavLink>
-  <NavLink href="#team">Team</NavLink>
+  <NavLink href="/#services">Services</NavLink>
+  <NavLink href="/#team">Team</NavLink>
 </nav>
 <div class="hidden flex-grow basis-0 justify-end md:flex">
   <CTAButton />

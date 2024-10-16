@@ -5,6 +5,7 @@
 @layer base {
   body {
     @apply bg-plum-100;
+    /* @apply bg-plum-dim-300; */
     @apply text-plum-400;
     @apply subpixel-antialiased;
   }
@@ -31,7 +32,9 @@
     @apply font-medium;
   }
   a,
-  button {
+  button,
+  input,
+  textarea {
     @apply focus-visible:outline-starstorm-bright;
     @apply focus-visible:ring-0;
     @apply focus-visible:outline-offset-2;
