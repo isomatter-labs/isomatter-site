@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Header, SectionBlock, Footer, Icon } from '$lib/components';
+  import { SectionBlock, Footer, Icon, CTAButton } from '$lib/components';
   import { Scene } from '$lib/three';
   import { Canvas } from '@threlte/core';
   import { PerfMonitor } from '@threlte/extras';
@@ -16,8 +16,6 @@ w-full
   </Canvas>
 </div>
 
-<Header />
-
 <div class="container mx-4 md:mx-auto">
   <!-- HEADER -->
   <SectionBlock
@@ -28,7 +26,7 @@ w-full
     management and software engineering. We’re the team that dives deep into
     your organization's unique needs, helping you navigate the world of
     technology with clarity and confidence.
-    <Button slot="extras">Let's build together</Button>
+    <CTAButton slot="extras"/>
   </SectionBlock>
 
   <!-- SERVICES -->

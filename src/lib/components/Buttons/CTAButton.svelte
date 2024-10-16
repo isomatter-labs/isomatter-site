@@ -1,5 +1,8 @@
 <script lang="ts">
-  import Button from './Button.svelte';
+  import ButtonLink from './ButtonLink.svelte';
 </script>
 
-<Button>Let's build together</Button>
+
+<ButtonLink href="/contact">
+    Let's build together
+</ButtonLink>
