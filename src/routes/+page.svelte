@@ -43,9 +43,12 @@ w-full
     <a
       slot="extras"
       href="."
-      class="flex items-center gap-2 text-starstorm-dim-400"
-      >Learn more <Icon class="fill-starstorm-dim-400" /></a
-    >
+      class="arrow flex items-center gap-2 text-starstorm-dim-400 w-fit hover:*first:translate-x-4"
+      >Learn more 
+      <div class="transition-transform ease-circular-in-out">
+        <Icon class="fill-starstorm-dim-400 stroke-starstorm-dim-400" />
+      </div>
+    </a>
   </SectionBlock>
 
   <!-- TEAM -->
@@ -58,3 +61,9 @@ w-full
 </div>
 
 <Footer />
+
+<style>
+  a.arrow:hover > div {
+    transform: translateX(8px);
+  }
+</style>

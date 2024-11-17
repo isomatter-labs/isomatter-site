@@ -4,9 +4,11 @@
   import NavLink from './NavLink.svelte';
 </script>
 
-<a class="logo-wrapper flex-grow basis-0" href={$page.url.origin}>
-  <Logo vivid />
-</a>
+<div class="logo-wrapper flex-grow basis-0">
+  <a href={$page.url.origin}>
+    <Logo vivid />
+  </a>
+</div>
 <nav class="hidden flex-grow basis-0 justify-center gap-4 md:flex">
   <NavLink href="/#services">Services</NavLink>
   <NavLink href="/#team">Team</NavLink>
